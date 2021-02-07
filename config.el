@@ -41,8 +41,9 @@
 (after! org
   (setq! +org-capture-todo-file "todo.org"
          +org-capture-notes-file "notes.org"
-         org-log-done 'time
-         org-indent-mode nil))
+         org-log-done 'time))
+
+(setq-hook! 'org-mode-hook org-indent-mode nil)
 
 (after! org-roam
   (setq! org-roam-directory (concat org-directory "roam/")
