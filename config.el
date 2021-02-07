@@ -59,7 +59,7 @@
 ;; Features dependent on data that can't be public are loaded in separate files.
 (load! "secrets/creds" nil t)
 (when (featurep! :app rss) (setq elfeed-feeds '()) (load! "secrets/feeds" nil t))
-(when (featurep! :app irc) (load! "secrets/irc") nil t)
+(when (featurep! :app irc) (load! "secrets/irc" nil t))
 (when (featurep! :email)   (load! "secrets/mail" nil t))
 
 (provide 'config)
