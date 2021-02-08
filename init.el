@@ -3,16 +3,19 @@
 (doom! :completion company ivy
 
        :ui
-       doom doom-dashboard (modeline +light)
-       nav-flash ophints hl-todo
-       (popup +all +defaults) workspaces
-       treemacs vc-gutter window-select
+       doom
+       doom-dashboard
+       (modeline +light)
+       hl-todo
+       (popup +all +defaults)
+       workspaces
+       window-select
 
        :editor
        (evil +everywhere) ; come to the dark side, we have cookies
-       snippets           ; my elves. They type so I don't have to
-       rotate-text        ; cycle region at point between text candidates
-       file-templates     ; auto-snippets for empty files
+       snippets           ; TODO setup
+       rotate-text
+       file-templates
 
        :emacs
        (dired +ranger)
@@ -28,6 +31,7 @@
        (lookup +docsets) ; TODO Configure lookup for nixos
        magit             ; a git porcelain for Emacs
        pass              ; password manager for nerds
+       direnv
 
        :checkers
        syntax
@@ -37,7 +41,7 @@
 
        ; Emacs stuff to keep in mind
        emacs-lisp
-       (org +gnuplot +dragndrop +pandoc +present +roam)
+       (org +roam)
        markdown          ; writing docs for people to ignore
        data              ; config/data formats
 

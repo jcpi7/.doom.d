@@ -22,9 +22,10 @@
           '("IETF RFCs"  "https://www.rfc-editor.org/search/rfc_search_detail.php?title=%s"))
 
 (when (featurep! :tools lookup +docsets)
+  (setq +lookup-open-url-fn #'eww)
   (set-docsets! '(python-mode) "Python 3")
   (set-docsets! 'c-mode "C")
-  (set-docsets! 'sh-mode "Bash") )
+  (set-docsets! 'sh-mode "Bash"))
 
 (after! em-term ;;RESEARCH Can't use "eshell" or else this block will load on elisp startup hook ?
   (pushnew! eshell-visual-commands "nnn" "htop" "mpv" "tmux"))
