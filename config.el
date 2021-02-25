@@ -5,10 +5,19 @@
 
 ;; Some themes just don't play well in terminal mode.
 ;; FIXME This also disables themes in gui frames under emacs-daemon
+(defmacro font-with-fallbacks (fspec &rest fspecs)
+  (let ((fspecs (cl-loop for f in fspecs
+                         collect `(find-font ,f))))
+    (append `(or (find-font ,fspec)) fspecs)))
+
 (when window-system
-    (setq doom-theme 'doom-tomorrow-night
-          doom-font (font-spec :family "Inconsolata Nerd Font Mono"
-                               :size 14)))
+  (setq doom-theme 'doom-tomorrow-night
+        doom-font (font-with-fallbacks
+                   (font-spec :family "Inconsolata Nerd Font Mono" :size 14)
+                   (font-spec :family "Terminus" :size 14)
+                   (font-spec :family "Anonymous Pro" :size 14)
+                   (font-spec :family "Fira Mono" :size 14)
+                   (font-spec :family "DejaVuSansMono" :size 14))))
 
 
 (after! eww (setq eww-download-directory "~/usr/tmp")) ;; RESEARCH Consider implementing a 'quickswitch' from desktop to mobile
