@@ -5,7 +5,7 @@
        :ui
        doom
        doom-dashboard
-       (modeline +light)
+       (modeline)
        hl-todo
        (popup +all +defaults)
        workspaces
@@ -25,6 +25,8 @@
        :term
        eshell vterm
 
+       :os tty
+
        :tools
        ; Stuff I use
        (eval +overlay)   ; run code, run (also, repls)
@@ -41,7 +43,7 @@
 
        ; Emacs stuff to keep in mind
        emacs-lisp
-       (org +roam)
+       (org +pandoc +roam)
        markdown          ; writing docs for people to ignore
        data              ; config/data formats
 

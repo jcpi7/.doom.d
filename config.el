@@ -33,6 +33,7 @@
 ;; Programming
 
 (setq! projectile-project-search-path '("~/src" "~/cfg"))
+
 (setq-hook! '(python-mode rust-mode sh-mode) ;; Prefer tab characters
            indent-tabs-mode t)
 
