@@ -3,13 +3,13 @@
 (setq display-line-numbers-type t
       tab-width 4)
 
-;; Some themes just don't play well in terminal mode.
-;; FIXME This also disables themes in gui frames under emacs-daemon
 (defmacro font-with-fallbacks (fspec &rest fspecs)
   (let ((fspecs (cl-loop for f in fspecs
                          collect `(find-font ,f))))
     (append `(or (find-font ,fspec)) fspecs)))
 
+;; Some themes just don't play well in terminal mode.
+;; FIXME This also disables themes in gui frames under emacs-daemon
 (when window-system
   (setq doom-theme 'doom-tomorrow-night
         doom-font (font-with-fallbacks
